@@ -10,7 +10,7 @@ class Camera(Node):
         super().__init__(node_name)
         self.pub = self.create_publisher(Image, "camera", 10)
         self.timer = self.create_timer(0.1, self.timer_callback)
-        self.cap = cv2.VideoCapture('http://192.168.48.1:5000')
+        self.cap = cv2.VideoCapture(0)
         self.cv_bridge = CvBridge()
         
     def timer_callback(self):
