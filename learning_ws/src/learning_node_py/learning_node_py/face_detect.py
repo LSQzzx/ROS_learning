@@ -7,7 +7,7 @@ class FaceDetectNode(Node):
     def __init__(self, node_name):
         super().__init__(node_name)
         self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-        self.cap = cv2.VideoCapture('http://192.168.48.1:5000')
+        self.cap = cv2.VideoCapture(0)
         
         while rclpy.ok():
             ret, frame = self.cap.read()
